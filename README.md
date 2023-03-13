@@ -13,9 +13,11 @@
 - **optional**: create a local database, to write the requests and save the model outputs.
 
 **Definition of done**:  
-- two github repos:
-    1. one for data prep and modeling
-    2. for API management
+- github repository fixed: Readme file finalized.
 - Working data prep and modeling tool to download and create model
 - Working API to receive and output expected trip duration
-- optional: local database with history of all inquiries to the API and results.
+- optional: local database with history of all inquiries to the API and results.  
+
+** Future improvements ** 
+- implement exception handling
+- implement debugger
