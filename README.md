@@ -5,7 +5,7 @@
 
   
 **path**:  
-- write a simple scraper to collect one data from/till period. for mvp(PoC) use only 1 month data.  (completed)
+- *write a simple scraper to collect one data from/till period. for mvp(PoC) use only 1 month data.  (completed)*
 - perform an EDA and enrich data using given data dictionary
 - create a pipeline to prep the data, firstly save data localy (note: dont forget to gitignore data folders). improvement save files in google cloud, use data versioning (DVC) and tags
 - create pipelines to check 2-3 models on finalized data.
