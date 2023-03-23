@@ -131,3 +131,5 @@ dmypy.json
 # user defined
 /raw_data
 raw_data/*
+/transformed_data
+transformed_data/*
