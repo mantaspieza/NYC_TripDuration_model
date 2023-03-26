@@ -39,9 +39,7 @@ def load_model():
     """
     Loads XGBoost regressor model used for predictions.
     """
-    app.model = pkl.load(
-        open("NYC_TripDuration_model/model/xgb_v2_for_api.pickle", "rb")
-    )
+    app.model = pkl.load(open("model/xgb_v2_for_api.pickle", "rb"))
 
 
 @app.get("/")

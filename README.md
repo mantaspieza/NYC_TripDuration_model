@@ -30,7 +30,7 @@ Folder used to hold python scripts:
 * prep_data: orchestrates extraction and transformation (data preparation) for model creation.
 
 ## Roadmap
-completed:  
+
 [x] Scraper created and documented to extract data from New York City government webpage.  
 [x] Exploratory data analysis performed to identify outliers, perform manual feature selection, and feature engineering. (engineering.ipynb)  
 [x] Transformer created and documented to apply transformations on raw data.  
@@ -39,7 +39,43 @@ completed:
 [x] Recursive Feature Selection test implemented, and model optimization Hyperparameter optimization completed. (modeling.ipynb)   
 [x] FastAPI App created and documented to predict the duration of the trip.
 
+## Usage
+#### To extract and transform required datasets for this project:
+1. Clone repository to your computer.  
+2. Open Terminal and navigate to the cloned repository on your computer.  
+3. run ```python  .\src\prep_data.py``` Two new folders will be created on your machine raw_data and transformed_data.
 
+#### Notebooks
+After data collection and transformations, you will be able to run egnineering.ipynb and modeling.ipynb
+FYI: Algorythm comparison seciton in modeling.ipynb takes quite some time. depending on your machine it might take up to 2-3 hours to run.
+
+#### Retrieving APP Prediction results:
+1. open your console and navigate to the root folder of your repository.
+2. run command ```python  .\src\app.py```
+you should see info debug messages identifying that the server process has started
+3. Open Postman (or a similar application of your choice).
+4. now you should be able to send get/post requests to the FastAPI:
+* To retrieve the health status of the api: http://0.0.0.0:8000/health
+* To receive the info use http://0.0.0.0:8000/
+* To receive prediction, send a post method to: http://0.0.0.0:8000/predict_single  
+ use this template for reference:
+```
+{
+        "VendorID": 1,
+        "passenger_count": 6,
+        "trip_distance": 2.2,
+        "RatecodeID": 3,
+        "store_and_fwd_flag": "N",
+        "PULocationID": 234,
+        "DOLocationID": 249,
+        "payment_type": 2,
+        "tolls_amount": 0.0,
+        "is_weekend": true,
+        "weekday": "Saturday",
+        "is_business_hours": false,
+        "time_of_day": "Morning"
+}
+```
 
 ## License
 
