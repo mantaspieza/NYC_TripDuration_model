@@ -15,7 +15,7 @@ class Scraper:
         id: str = "CodeAcademy-Final-Project",
         web_browser: str = "Mozilla/5.0",
         general_url_for_monthly_data: str = "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
-        scraping_start_year: str = "2022-01",
+        scraping_start_year: str = "2017-01",
         scraping_end_year: str = "2022-01",
         title_of_parquet_file: str = "scraped_yellow_city_taxi_file",
         timeout: int = 1,
@@ -105,11 +105,17 @@ class Scraper:
     def download_required_datasets(self, path_to_raw_dataset_folder:str ='../raw_data') -> None:
         """
         Downloads required dataset to raw data folder, checking if the file does exist.
+        raw data folder is created if does not exist.
 
         Args:
             path_to_raw_dataset_folder (str, optional): Path to save dowloaded datasets. Defaults to '../raw_data'.
         """
         # retrieves all files in folder to avoid duplicate download
+
+        if 'raw_data' not in os.listdir('../'):
+            print('raw data foler is created')
+            os.mkdir('../raw_data')
+
         files_in_folder = os.listdir(path_to_raw_dataset_folder)
         self.identify_required_datasets()
 
