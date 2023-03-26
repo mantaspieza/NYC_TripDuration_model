@@ -188,7 +188,7 @@ class Transformer:
             self.dataframe = self.dataframe[self.dataframe["PULocationID"] != location]
             self.dataframe = self.dataframe[self.dataframe["DOLocationID"] != location]
 
-    def filter_dropoff_locations(self)-> None:
+    def filter_dropoff_locations(self) -> None:
         """
         Filters out unknown drop off locations.
         Overwrites dataset defined in class initiation.
@@ -198,7 +198,7 @@ class Transformer:
             | (self.dataframe["DOLocationID"] != 265)
         ]
 
-    def filter_trip_duration_outliers(self)-> None:
+    def filter_trip_duration_outliers(self) -> None:
         """
         Filters out trip duration outliers that are less or equal to 0, and greateror or equal than 99.5 percentile.
         Overwrites dataset defined in class initiation.
@@ -237,7 +237,7 @@ class Transformer:
             )
         ]
 
-    def filter_tip_amount_outliers(self)-> None:
+    def filter_tip_amount_outliers(self) -> None:
         """
         Filters out tip amount outliers.
         Overwrites dataset defined in class initiation.
@@ -247,7 +247,7 @@ class Transformer:
             <= np.quantile(self.dataframe["tip_amount"], 0.999)
         ]
 
-    def filter_tolls_amount_outliers(self)-> None:
+    def filter_tolls_amount_outliers(self) -> None:
         """
         Filters out tolls amount outliers.
         Overwrites dataset defined in class initiation.
@@ -308,7 +308,7 @@ class Transformer:
             }
         )
 
-    def define_if_business_hours(self, value:int) -> bool:
+    def define_if_business_hours(self, value: int) -> bool:
         """
         Defines if pickup time is within business hours.
 
@@ -323,7 +323,7 @@ class Transformer:
         else:
             return False
 
-    def define_time_of_day(self, hour:int) -> str:
+    def define_time_of_day(self, hour: int) -> str:
         """
         Identifies time of the day.
 
@@ -396,10 +396,10 @@ class Transformer:
         Function used to orchestrate all the transormation steps.
         """
 
-        self.select_christmas_period()  
+        self.select_christmas_period()
 
         # categorical columns
-        self.restrict_vendor_id()  
+        self.restrict_vendor_id()
         self.create_trip_duration_column()
         self.restrict_passenger_count()
         self.restrict_ratecodeid()
@@ -434,10 +434,12 @@ class Transformer:
     def transform_data(self) -> None:
         """
         Main function used to read in dataset, perfrom transformations and save the transformed dataframe.
-        
+
         """
         self.prepare_dataset()
-
+        if "transformed_data" not in os.listdir("../"):
+            print("raw data foler is created")
+            os.mkdir("../transformed_data")
         self.dataframe.to_parquet(
             f"{self.transformed_data_path}transformed_{self.file_name.split('_')[-1]}"
         )
