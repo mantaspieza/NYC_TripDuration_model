@@ -1,7 +1,7 @@
 # New York City Yellow Taxi Trip Duration Prediction
 
 ### Dataset source and Data Dictionary:
-all public NYC trip datasets can be found in [NYC goverment web page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+all public NYC trip datasets can be found in [NYC goverment web page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
 data dictionary for yellow taxi datasets can be found [here](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf)
 
 ### Hypothetical Business problem
