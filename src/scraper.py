@@ -102,19 +102,19 @@ class Scraper:
                 else:
                     pass
 
-    def download_required_datasets(self, path_to_raw_dataset_folder:str ='../raw_data') -> None:
+    def download_required_datasets(self, path_to_raw_dataset_folder:str ='./raw_data') -> None:
         """
         Downloads required dataset to raw data folder, checking if the file does exist.
         raw data folder is created if does not exist.
 
         Args:
-            path_to_raw_dataset_folder (str, optional): Path to save dowloaded datasets. Defaults to '../raw_data'.
+            path_to_raw_dataset_folder (str, optional): Path to save dowloaded datasets. Defaults to './raw_data'.
         """
         # retrieves all files in folder to avoid duplicate download
 
-        if 'raw_data' not in os.listdir('../'):
+        if 'raw_data' not in os.listdir('./'):
             print('raw data foler is created')
-            os.mkdir('../raw_data')
+            os.mkdir('./raw_data')
 
         files_in_folder = os.listdir(path_to_raw_dataset_folder)
         self.identify_required_datasets()

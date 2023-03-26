@@ -15,11 +15,11 @@ class Transformer:
 
     def __init__(
         self,
-        raw_file_location: str = "../raw_data/",
+        raw_file_location: str = "./raw_data/",
         period_start_day: str = 24,
         period_end_day: str = 26,
         file_name: str = "yellow_tripdata_2021-12.parquet",
-        transofmed_data_path="../transformed_data/",
+        transofmed_data_path="./transformed_data/",
     ):
         """
         Initialization function for Transformer class.
@@ -437,9 +437,9 @@ class Transformer:
 
         """
         self.prepare_dataset()
-        if "transformed_data" not in os.listdir("../"):
-            print("raw data foler is created")
-            os.mkdir("../transformed_data")
+        if "transformed_data" not in os.listdir("./"):
+            print("transformed data folder is created")
+            os.mkdir("./transformed_data")
         self.dataframe.to_parquet(
             f"{self.transformed_data_path}transformed_{self.file_name.split('_')[-1]}"
         )

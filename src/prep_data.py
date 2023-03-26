@@ -8,12 +8,13 @@ class DataPreparation:
     """
     Class used to orchestrate data extraction and transformation.
     """
+
     def __init__(
         self,
         data_extraction_start_date: str = "2017-01",
         data_extraction_end_date: str = "2022-01",
-        raw_data_path: str = "../raw_data",
-        transformed_data_path="../transformed_data/",
+        raw_data_path: str = "./raw_data",
+        transformed_data_path="./transformed_data/",
     ):
         """
         Class initialisation function.
@@ -46,3 +47,8 @@ class DataPreparation:
             ).transform_data()
 
         print("all transformations completed")
+
+
+if __name__ == "__main__":
+    data_preparation = DataPreparation()
+    data_preparation.extract_data()
