@@ -133,3 +133,4 @@ dmypy.json
 raw_data/*
 /transformed_data
 transformed_data/*
+notes-n-scrambles.ipynb
