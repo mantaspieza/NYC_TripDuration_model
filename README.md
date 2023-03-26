@@ -40,10 +40,12 @@ Folder used to hold python scripts:
 [x] FastAPI App created and documented to predict the duration of the trip.
 
 ## Usage
+
 #### To extract and transform required datasets for this project:
 1. Clone repository to your computer.  
 2. Open Terminal and navigate to the cloned repository on your computer.  
-3. run ```python  .\src\prep_data.py``` Two new folders will be created on your machine raw_data and transformed_data.
+3. use pip command to install required libraries and their versions used for this project: ```pip install -r requirements.txt```
+4. run ```python  .\src\prep_data.py``` Two new folders will be created on your machine raw_data and transformed_data.
 
 #### Notebooks
 After data collection and transformations, you will be able to run egnineering.ipynb and modeling.ipynb
